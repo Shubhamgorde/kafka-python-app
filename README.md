@@ -1,9 +1,7 @@
 # Kafka-python
 
 ## Getting Started
-### About
 
-## Getting Started
 ### About
 The project illustrates using python for kafka broker setup. Used **kafka-python** library to interact with broker.
 Two consumers are created(based on transaction type) using python multiprocessing library(kafka-consumer.py)
