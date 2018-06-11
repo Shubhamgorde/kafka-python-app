@@ -2,6 +2,9 @@
 
 ## Getting Started
 ### About
+
+## Getting Started
+### About
 The project illustrates using python for kafka broker setup. Used **kafka-python** library to interact with broker.
 Two consumers are created(based on transaction type) using python multiprocessing library(kafka-consumer.py)
 A producer is reading csv file(transaction-data.csv) and publishing data over topic
@@ -15,6 +18,7 @@ MySQL is used for maintaining *transaction summary* of user in **users** table a
 5. Install [MySQL](https://dev.mysql.com/downloads/)(or you can connect to any SQL server)
 
 ## Setting up of Kafka broker
+
 ### You need to install apache zookeeper
 1. Download and Extract Apache Zookeeper [here]( http://zookeeper.apache.org/releases.html#download)
 2. Copy and Rename “zoo_sample.cfg” to “zoo.cfg” in ~\zookeeper-3.4.9\conf
