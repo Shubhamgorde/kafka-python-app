@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% set active_page = 'transationSummary' -%}
+{% block container %}
+  <div class="">
+      <div class="boldFont">
+          <h2>All Users Transaction Summary</h2>
+      </div>
+    <div>
+        <table class="table table-bordered table-responsive custom-table" id="myTable"  >
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Balance</th>
+                    <th>Avg transaction amount</th>
+                    <th>Total transactions</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+                <tbody >
+                {% for user in users %}
+                  <tr onclick="">
+                      <td>{{ user.userid }}</td>
+                      <td>{{ user.balance }}</td>
+                      <td>{{ user.avg_transaction_amount }}</td>
+                      <td>{{ user.no_of_transactions }}</td>
+                      <td ><span class="glyphicon glyphicon-list-alt cursor-class" data-toggle="tooltip" title="View All Transactions of User" onclick="location.href='{{ url_for('userTransactions',uid=user['userid'])}}';"></span></td>
+                  </tr>
+                {% endfor %}
+             </tbody>
+
+        </table>
+        </div>
+    </div>
+{% endblock %}

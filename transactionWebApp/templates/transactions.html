@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set active_page = 'transactions' -%}
+{% block container %}
+   <div class="">
+      <div class="boldFont">
+        <h2>All Transactions</h2>
+      </div>
+    <div>
+        <table class="table table-bordered table-responsive custom-table" id="myTable">
+            <thead>
+                <tr>
+                    <th>Transaction Id</th>
+                    <th>User Id</th>
+                    <th>Transaction Date</th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Alert</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for transaction in transactions %}
+                  <tr>
+                      <td>{{ transaction.tid }}</td>
+                      <td>{{ transaction.uid }}</td>
+                      <td>{{ transaction.txn_date }}</td>
+                      <td>{{ transaction.txn_type }}</td>
+                      <td>{{ transaction.amount }}</td>
+                      {% if transaction.txn_marked==1 %}
+                         <td><span class="marked-class">Yes</span></td>
+                      {% endif %}
+                      {% else %}
+                        <td><span>No</span></td>
+
+                  </tr>
+                {% endfor %}
+             </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock %}

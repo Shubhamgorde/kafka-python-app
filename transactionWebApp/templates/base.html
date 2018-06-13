@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jinja2 Tutorial - Tutsplus</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  </head>
+  <body>
+  <div class="row" style="">
+      <div class="col-sm-3" style="padding: 40px 20px; height: 90vh;background: #f2eeee; ">
+          <ul class="nav nav-pills nav-stacked">
+              <li role="presentation" class="{{ 'active' if active_page == 'transationSummary' else '' }}"><a class="{{ 'tab-style' if active_page == 'transationSummary' else ''}}" href="{{ url_for('transactionSummary')}}">Users Transaction summary</a></li>
+              <li role="presentation" class="{{ 'active' if active_page == 'transactions' else '' }}"><a class="{{ 'tab-style' if active_page == 'transactions' else ''}}" href="{{ url_for('transactions')}}">All Transactions</a></li>
+              <li role="presentation" class="{{ 'active' if active_page == 'alerts' else '' }}"><a class="{{ 'tab-style' if active_page == 'alerts' else ''}}" href="{{ url_for('alerts')}}">Alerts</a></li>
+          </ul>
+          {% set active_page = active_page|default('index') -%}
+      </div>
+      <div class="col-sm-9" style="padding: 30px 20px;" >
+              {% block container %}{% endblock %}
+      </div>
+  </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/layout.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/transactionSummary.js') }}"></script>
+  </body>
+</html>

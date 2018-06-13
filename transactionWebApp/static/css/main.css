@@ -1,0 +1,23 @@
+
+.top-pad {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.boldFont{
+    font-weight: bold;
+}
+
+.cursor-class{
+    cursor: pointer;
+}
+.marked-class{
+    color:Red;
+}
+
+.tab-style{
+    background-image: linear-gradient(45deg, rgba(87, 124, 252, 1) 0%, rgba(147, 93, 240, 1) 100%) !important;
+}
+.custom-table{
+    width:95% !important;
+}

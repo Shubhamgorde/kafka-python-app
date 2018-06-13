@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% set active_page = 'alerts'%}
+{% block container %}
+  <div class="">
+      <div class="boldFont">
+        <h2>Transactions Leading to Alerts(Crossed threshold limit)</h2>
+      </div>
+    <div>
+        <table class="table table-bordered table-responsive custom-table" id="myTable">
+            <thead>
+                <tr>
+                    <th>Transaction Id</th>
+                    <th>User Id</th>
+                    <th>Transaction Date</th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for transaction in markedTransactions %}
+                  <tr>
+                      <td>{{ transaction.tid }}</td>
+                      <td>{{ transaction.uid }}</td>
+                      <td>{{ transaction.txn_date }}</td>
+                      <td>{{ transaction.txn_type }}</td>
+                      <td>{{ transaction.amount }}</td>
+
+                  </tr>
+                {% endfor %}
+             </tbody>
+        </table>
+        </div>
+    </div>
+
+{% endblock %}
